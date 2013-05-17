@@ -1,7 +1,11 @@
-A collection of open-source Unity3D 4+ property drawers
+A collection of open-source Unity3D property drawers
 
 http://blogs.unity3d.com/2012/09/07/property-drawers-in-unity-4/
 http://docs.unity3d.com/Documentation/ScriptReference/PropertyDrawer.html
+
+Property drawers are a new feature in Unity 4 to help you make custom inspectors without writing editor code. By just adding attributes to your behaviour's fields, you can turn the left image into the right:
+
+![Drawers before and after](inspector-before.png)
 
 Each directory contains one drawer, and some documentation.
 
