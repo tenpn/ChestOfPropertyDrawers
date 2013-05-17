@@ -27,7 +27,7 @@ public class NotLessThanDrawer : PropertyDrawer
             }
             else
             {
-                throw new UnityException("must be int or float to use with NotMoreThan");
+                throw new UnityException("must be int or float to use with NotLessThan");
             }
         }
         catch (UnityException e)
