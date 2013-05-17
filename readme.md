@@ -5,8 +5,16 @@ http://docs.unity3d.com/Documentation/ScriptReference/PropertyDrawer.html
 
 Each directory contains one drawer, and some documentation.
 
+##Installation
+
+Download the zip from the ZIP button above, expand into your Assets directory.
+
+##More Drawers
+
 Got an idea for a drawer? No time? Suggest it in the issues page!
 https://github.com/tenpn/ChestOfPropertyDrawers/issues
+
+###Pull Requests
 
 Pull requests more than welcome, but new drawers must be grainular enough to be of use to multiple projects.
 
@@ -22,6 +30,8 @@ AttributeName
 ```
 
 If you can embed pictures in your readmes, all the better.
+
+##Other Stuff
 
 Partially-inspired by this Japanese(?) repro:
 https://github.com/anchan828/property-drawer-collection
