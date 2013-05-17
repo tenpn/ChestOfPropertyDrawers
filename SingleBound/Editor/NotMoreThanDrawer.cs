@@ -12,21 +12,30 @@ public class NotMoreThanDrawer : PropertyDrawer
                                 GUIContent label) 
     {
         var bound = attribute as NotMoreThan;
-        
-        if (prop.propertyType == SerializedPropertyType.Integer)
+
+        try
         {
-            prop.intValue = Mathf.Min(EditorGUI.IntField(position, label, prop.intValue),
-                                      bound.IntUpperBound);
+            if (prop.propertyType == SerializedPropertyType.Integer)
+            {
+                prop.intValue = Mathf.Min(EditorGUI.IntField(position, label, prop.intValue),
+                                          bound.IntBound);
+            }
+            else if (prop.propertyType == SerializedPropertyType.Float)
+            {
+                prop.floatValue = Mathf.Min(EditorGUI.FloatField(
+                                                position, label, prop.floatValue),
+                                            bound.FloatBound);
+            }
+            else
+            {
+                throw new UnityException(
+                    "must be int or float property to use with NotMoreThan");
+            }
         }
-        else if (prop.propertyType == SerializedPropertyType.Float)
+        catch (UnityException e)
         {
-            prop.floatValue = Mathf.Min(EditorGUI.FloatField(position, label, prop.floatValue),
-                                        bound.FloatUpperBound);
-        }
-        else
-        {
-            throw new UnityException("property " + prop 
-                                     + " must be int or float to use with NotMoreThan");
+            throw new UnityException("error on NotMoreThan attribute of property " 
+                                     + prop.name + "\n" + e.ToString());
         }
     }
 }
